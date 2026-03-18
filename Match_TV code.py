@@ -30,7 +30,7 @@ def get_article_links(base_url, max_pages=20):
             break
 
 
-def extract_repliki(article_url):
+def extract_remarks(article_url):
     soup = get_soup(article_url)
     remarks = []
     article_body = (
@@ -58,7 +58,7 @@ def main():
     all_remarks = []
     total_words = 0
     for i, url in enumerate(links, start=1):
-        remarks = extract_repliki(url)
+        remarks = extract_remarks(url)
         if remarks:
             for r in remarks:
                 all_remarks.append(r)
